@@ -1,0 +1,10 @@
+django
+djangorestframework
+djangorestframework-simplejwt
+django-filter
+python-decouple
+psycopg2-binary
+dj-database-url
+gunicorn
+uvicorn
+whitenoise
