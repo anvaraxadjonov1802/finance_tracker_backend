@@ -232,7 +232,7 @@ Production uchun kerakli narsalar:
 
 ## Author
 
-Created for hackathon MVP by **[YOUR_NAME]**
+Created for hackathon MVP by **Anvar Axadjonov**
 
 ## License
 
