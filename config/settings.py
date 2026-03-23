@@ -8,8 +8,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="").split(",")
-CSRF_TRUSTED_ORIGINS = config("CSRF_TRUSTED_ORIGINS", default="").split(",")
+ALLOWED_HOSTS = [host for host in config("ALLOWED_HOSTS", default="").split(",") if host]
+CSRF_TRUSTED_ORIGINS = [origin for origin in config("CSRF_TRUSTED_ORIGINS", default="").split(",") if origin]
+CORS_ALLOWED_ORIGINS = [origin for origin in config("CORS_ALLOWED_ORIGINS", default="").split(",") if origin]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -99,7 +100,6 @@ STORAGES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 
-CORS_ALLOWED_ORIGINS = config("CORS_ALLOWED_ORIGINS", default="").split(",")
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
